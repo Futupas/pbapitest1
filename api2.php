@@ -10,6 +10,7 @@ $stream_options = array (
              );
 $context=stream_context_create($stream_options);
 $response=file_get_contents($url, false, $context);
+echo $response;
 $array_data = json_decode(json_encode(simplexml_load_string($response)), true);
 echo $array_data;
 ?>

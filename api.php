@@ -13,7 +13,7 @@
 
 $data = "<oper>cmt</oper>
 <wait>45</wait>
-<test>0</test>
+<test>1</test>
 <payment id=\"1111\">
     <prop name=\"cardnum\" value=\"5168745013738544\" />
     <prop name=\"country\" value=\"UA\" />
@@ -33,7 +33,7 @@ curl_setopt_array($ch, array(
         'Content-Type: application/xml'
     ),
     // CURLOPT_POSTFIELDS => json_encode($postData)
-    CURLOPT_POSTFIELDS => "
+    CURLOPT_POSTFIELDS => urlencode("
 <?xml version=\"1.0\" encoding=\"UTF-8\"?>
 <request version=\"1.0\">
     <merchant>
@@ -42,7 +42,7 @@ curl_setopt_array($ch, array(
     </merchant>
     <data>$data</data>
 </request>
-    "
+    ")
 ));
 
 // Send the request

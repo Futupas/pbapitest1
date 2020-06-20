@@ -11,6 +11,18 @@
 //     'content' => 'With <b>exciting</b> content...'
 // );
 
+$data = "<oper>cmt</oper>
+<wait>45</wait>
+<test>0</test>
+<payment id=\"1111\">
+    <prop name=\"cardnum\" value=\"5168745013738544\" />
+    <prop name=\"country\" value=\"UA\" />
+</payment>";
+
+$password = getenv('password');
+
+$sign=sha1(md5($data.$password));
+
 // Setup cURL
 $ch = curl_init('https://api.privatbank.ua/p24api/balance');
 curl_setopt_array($ch, array(
@@ -22,22 +34,22 @@ curl_setopt_array($ch, array(
     ),
     // CURLOPT_POSTFIELDS => json_encode($postData)
     CURLOPT_POSTFIELDS => "
-    <?xml version=\"1.0\" encoding=\"UTF-8\"?>
-            <request version=\"1.0\">
-                <merchant>
-                    <id>163187</id>
-                    <signature>e06a63435914f86a0a85451486d83e94f6c4b6c4</signature>
-                </merchant>
-                <data>
-                    <oper>cmt</oper>
-                    <wait>45</wait>
-                    <test>0</test>
-                    <payment id=\"1111\">
-                    <prop name=\"cardnum\" value=\"5168745013738544\" />
-                    <prop name=\"country\" value=\"UA\" />
-                    </payment>
-                </data>
-            </request>
+<?xml version=\"1.0\" encoding=\"UTF-8\"?>
+<request version=\"1.0\">
+    <merchant>
+        <id>163187</id>
+        <signature>$sign</signature>
+    </merchant>
+    <data>
+        <oper>cmt</oper>
+        <wait>45</wait>
+        <test>0</test>
+        <payment id=\"1111\">
+            <prop name=\"cardnum\" value=\"5168745013738544\" />
+            <prop name=\"country\" value=\"UA\" />
+        </payment>
+    </data>
+</request>
     "
 ));
 

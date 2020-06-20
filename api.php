@@ -33,16 +33,16 @@ curl_setopt_array($ch, array(
         'Content-Type: application/xml'
     ),
     // CURLOPT_POSTFIELDS => json_encode($postData)
-    CURLOPT_POSTFIELDS => urlencode("
-<?xml version=\"1.0\" encoding=\"UTF-8\"?>
+    CURLOPT_POSTFIELDS => urlencode(
+"<?xml version=\"1.0\" encoding=\"UTF-8\"?>
 <request version=\"1.0\">
     <merchant>
         <id>163187</id>
         <signature>$sign</signature>
     </merchant>
     <data>$data</data>
-</request>
-    ")
+</request>"
+)
 ));
 
 // Send the request

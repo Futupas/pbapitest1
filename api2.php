@@ -9,6 +9,7 @@ $url = "https://api.privatbank.ua/p24api/rest_fiz";
 $xml2= file_get_contents('request.xml'); 
 $xml2 = str_replace('--SIGNATURE--', $sign, $xml2);
 $xml2 = str_replace('--DATA--', $data, $xml2);
+echo $xml2;
 $stream_options = array (
              'http' => array (
                    'method' => "POST",

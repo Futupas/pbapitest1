@@ -1,11 +1,5 @@
 <?php
-$data = "<oper>cmt</oper>
-<wait>45</wait>
-<test>1</test>
-<payment id=\"1111\">
-    <prop name=\"cardnum\" value=\"5168745013738544\" />
-    <prop name=\"country\" value=\"UA\" />
-</payment>";
+$data = "<oper>cmt</oper><wait>45</wait><test>1</test><payment id=\"1111\"><prop name=\"cardnum\" value=\"5168745013738544\" /><prop name=\"country\" value=\"UA\" /></payment>";
 
 $password = getenv('password');
 

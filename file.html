@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        'use strict';
+
+(async () => {
+    const url = 'https://api.privatbank.ua/p24api/balance';
+
+try {
+  const response = await fetch(url, {
+    method: 'POST', // или 'PUT'
+    body: `
+    <?xml version="1.0" encoding="UTF-8"?>
+            <request version="1.0">
+                <merchant>
+                    <id>163187</id>
+                    <signature>e06a63435914f86a0a85451486d83e94f6c4b6c4</signature>
+                </merchant>
+                <data>
+                    <oper>cmt</oper>
+                    <wait>45</wait>
+                    <test>0</test>
+                    <payment id="1111">
+                    <prop name="cardnum" value="5168745013738544" />
+                    <prop name="country" value="UA" />
+                    </payment>
+                </data>
+            </request>`, // данные могут быть 'строкой' или {объектом}!
+    headers: {
+      'Content-Type': 'application/xml'
+    }
+  });
+  const json = await response.json();
+  console.log('Успех:', JSON.stringify(json));
+} catch (error) {
+  console.error('Ошибка:', error);
+}
+
+})();
+    </script>
+</body>
+</html>

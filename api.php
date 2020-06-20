@@ -40,15 +40,7 @@ curl_setopt_array($ch, array(
         <id>163187</id>
         <signature>$sign</signature>
     </merchant>
-    <data>
-        <oper>cmt</oper>
-        <wait>45</wait>
-        <test>0</test>
-        <payment id=\"1111\">
-            <prop name=\"cardnum\" value=\"5168745013738544\" />
-            <prop name=\"country\" value=\"UA\" />
-        </payment>
-    </data>
+    <data>$data</data>
 </request>
     "
 ));

@@ -2,14 +2,7 @@
 <request version="1.0">        
  <merchant>
    <id>75482</id>
-   <signature>6119f8e0ed067acde2957b2d264eeae11f8da756</signature>
+   <signature>--SIGNATURE--</signature>
  </merchant>
-<data><oper>cmt</oper>
-<wait>0</wait>
-<test>0</test>
-<payment id="">
-    <prop name="sd" value="11.08.2013" />
-    <prop name="ed" value="11.09.2013" />
-    <prop name="card" value="5168742060221193" />
-</payment></data>
+<data>--DATA--</data>
 </request>

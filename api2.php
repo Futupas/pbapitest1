@@ -1,6 +1,20 @@
 <?php
+$data = "<oper>cmt</oper>
+<wait>45</wait>
+<test>1</test>
+<payment id=\"1111\">
+    <prop name=\"cardnum\" value=\"5168745013738544\" />
+    <prop name=\"country\" value=\"UA\" />
+</payment>";
+
+$password = getenv('password');
+
+$sign=sha1(md5($data.$password));
+
 $url = "https://api.privatbank.ua/p24api/rest_fiz";       
 $xml2= file_get_contents('request.xml'); 
+$xml2 = str_replace('--SIGNATURE--', $sign, $xml2);
+$xml2 = str_replace('--DATA--', $data, $xml2);
 $stream_options = array (
              'http' => array (
                    'method' => "POST",

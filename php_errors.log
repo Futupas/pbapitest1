@@ -1,0 +1,8 @@
+[22-Jun-2020 19:39:33 UTC] PHP Warning:  file_get_contents(): SSL operation failed with code 1. OpenSSL Error messages:
+error:1416F086:SSL routines:tls_process_server_certificate:certificate verify failed in C:\PROJECTS\pbapitest1\api2.php on line 12
+[22-Jun-2020 19:39:33 UTC] PHP Warning:  file_get_contents(): Failed to enable crypto in C:\PROJECTS\pbapitest1\api2.php on line 12
+[22-Jun-2020 19:39:33 UTC] PHP Warning:  file_get_contents(https://api.privatbank.ua/p24api/rest_fiz): failed to open stream: operation failed in C:\PROJECTS\pbapitest1\api2.php on line 12
+[22-Jun-2020 19:39:43 UTC] PHP Warning:  file_get_contents(): SSL operation failed with code 1. OpenSSL Error messages:
+error:1416F086:SSL routines:tls_process_server_certificate:certificate verify failed in C:\PROJECTS\pbapitest1\api2.php on line 12
+[22-Jun-2020 19:39:43 UTC] PHP Warning:  file_get_contents(): Failed to enable crypto in C:\PROJECTS\pbapitest1\api2.php on line 12
+[22-Jun-2020 19:39:43 UTC] PHP Warning:  file_get_contents(https://api.privatbank.ua/p24api/rest_fiz): failed to open stream: operation failed in C:\PROJECTS\pbapitest1\api2.php on line 12
